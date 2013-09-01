@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Android的图片加载库Picasso | 探索Github</title>
+  <title>Retrofit(REST client for Android) | 探索Github</title>
   <meta name="author" content="chenyc">
   
   <meta name="description" content="收集Github上优秀项目">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Android的图片加载库Picasso"/>
+  <meta property="og:title" content="Retrofit(REST client for Android)"/>
   <meta property="og:site_name" content="探索Github"/>
 
   
@@ -51,42 +51,46 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2013-09-01T08:01:44.000Z"><a href="/2013/09/01/android-picasso/">2013-09-01</a></time>
+        <time datetime="2013-09-01T08:47:18.000Z"><a href="/2013/09/01/android-rest-client-retrofit/">2013-09-01</a></time>
       
       
   
-    <h1 class="title">Android的图片加载库Picasso</h1>
+    <h1 class="title">Retrofit(REST client for Android)</h1>
   
 
     </header>
     <div class="entry">
       
-        <p><a href="https://github.com/square/picasso" target="_blank">Picasso</a>是square开源的一个Android的图片加载和缓存工具库。<br>可以处理Android开发中图片加载相关的问题：</p>
-<ul>
-<li>自动处理<code>ImageView</code>在Adapter中回收</li>
-<li>使用最小内存处理图片转换操作，比如大小调整等</li>
-<li>自动内存管理和磁盘缓存</li>
-</ul>
-<p><img src="https://github.com/square/picasso/raw/master/website/static/sample.png" alt=""></p>
-<p>图片加载代码</p>
-<figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>Picasso.with(context).load(<span class="string">"http://i.imgur.com/DvpvklR.png"</span>).into(imageView);
-</pre></td></tr></table></figure>
-
-<p>图片转换</p>
+        <p><a href="https://github.com/square/retrofit" target="_blank">Retrofit</a>是一个类型安全的REST工具库;<br>它利用标注去定义HTTP请求参数，返回数据支持JSON, protocol buffers格式，<br>并利用GSON等相应的转换库直接把返回数据转换成bean。 </p>
+<h3>使用介绍</h3>
+<p>定义接口方法，HTTP参数直接在代码中体现</p>
 <figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
 2
 3
 4
-5
-</pre></td><td class="code"><pre>Picasso.with(context)
-  .load(url)
-  .resize(<span class="number">50</span>, <span class="number">50</span>)
-  .centerCrop()
-  .into(imageView)
+</pre></td><td class="code"><pre><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">GitHubService</span> {</span>
+  <span class="annotation">@GET</span>(<span class="string">"/users/{user}/repos"</span>)
+  List&lt;Repo&gt; listRepos(<span class="annotation">@Path</span>(<span class="string">"user"</span>) String user);
+}
 </pre></td></tr></table></figure>
 
-<p>Github: <a href="https://github.com/square/picasso" target="_blank">https://github.com/square/picasso</a><br>官方介绍：<a href="http://square.github.io/picasso/" target="_blank">http://square.github.io/picasso/</a></p>
+<p>使用RestAdapter生成GitHubService的实现</p>
+<figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre>RestAdapter restAdapter = <span class="keyword">new</span> RestAdapter.Builder()
+    .setServer(<span class="string">"https://api.github.com"</span>)
+    .build();
+GitHubService service = restAdapter.create(GitHubService.class);
+</pre></td></tr></table></figure>
+
+<p>调用方法，实现HTTP请求</p>
+<figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>List&lt;Repo&gt; repos = service.listRepos(<span class="string">"octocat"</span>);
+</pre></td></tr></table></figure>
+
+<p>Github:<a href="https://github.com/square/retrofit" target="_blank">https://github.com/square/retrofit</a><br>官方介绍：<a href="http://square.github.io/retrofit/" target="_blank">http://square.github.io/retrofit/</a></p>
 
       
     </div>
@@ -101,7 +105,7 @@
         
   
   <div class="tags">
-    <a href="/tags/android/">android</a>, <a href="/tags/imageview/">imageview</a>
+    <a href="/tags/android/">android</a>, <a href="/tags/rest/">rest</a>
   </div>
 
        

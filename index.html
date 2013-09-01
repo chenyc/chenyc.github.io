@@ -52,6 +52,190 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2013-09-01T09:11:11.000Z"><a href="/2013/09/01/actionbar-pulltorefresh/">2013-09-01</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/09/01/actionbar-pulltorefresh/">Actionbar下拉刷新</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><a href="https://github.com/chrisbanes/ActionBar-PullToRefresh" target="_blank">ActionBar-PullToRefresh</a>是类似于易信的下拉刷新方式，在标题栏显示状态。</p>
+<p>目前支持以下几种控件的下拉刷新：  </p>
+<ul>
+<li>AbsListView derivatives (ListView &amp; GridView).</li>
+<li>ScrollView</li>
+<li>WebView</li>
+</ul>
+<p>ActionBar-PullToRefresh也支持自定义控件的下拉刷新，需要实现<code>ViewDelegate</code></p>
+<h3>使用方法</h3>
+<figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="code"><pre><span class="keyword">private</span> PullToRefreshAttacher mPullToRefreshAttacher;
+
+<span class="annotation">@Override</span>
+<span class="keyword">public</span> <span class="keyword">void</span> onCreate(Bundle savedInstanceState) {
+    <span class="keyword">super</span>.onCreate(savedInstanceState);
+
+    <span class="comment">// Get View for which the user will scroll…</span>
+    View scrollableView = findViewById(R.id.blah); 
+
+    <span class="comment">// Create a PullToRefreshAttacher instance</span>
+    mPullToRefreshAttacher = PullToRefreshAttacher.get(<span class="keyword">this</span>);
+
+    <span class="comment">// Add the Refreshable View and provide the refresh listener</span>
+    mPullToRefreshAttacher.addRefreshableView(scrollableView, <span class="keyword">this</span>);
+}
+</pre></td></tr></table></figure>
+
+<p>更多使用方法请直接参考官方github上的说明。</p>
+<p><img src="https://lh5.ggpht.com/dTB-uAam9M_69P4XKcXK3-dKG_qP28-FcWBz8fSTTBNqUlNhaSBHQWVtXG0dV9fkpxET=h900-rw" alt=""></p>
+<p>Github:<a href="https://github.com/chrisbanes/ActionBar-PullToRefresh" target="_blank">https://github.com/chrisbanes/ActionBar-PullToRefresh</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-09-01T09:02:55.000Z"><a href="/2013/09/01/android-times-square/">2013-09-01</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/09/01/android-times-square/">android日历控件</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><a href="https://github.com/square/android-times-square" target="_blank">TimesSquare</a>是Square开源的一个日历控件。</p>
+<h3>使用方法：</h3>
+<p>在layout中加入如下代码</p>
+<figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre>&lt;com.squareup.timessquare.CalendarPickerView
+    android:id=<span class="string">"@+id/calendar_view"</span>
+    android:layout_width=<span class="string">"match_parent"</span>
+    android:layout_height=<span class="string">"match_parent"</span>
+    /&gt;
+</pre></td></tr></table></figure>
+
+<p><img src="https://github.com/square/android-times-square/raw/master/timesSquareScreenshot.png" alt=""></p>
+<p>Github：<a href="https://github.com/square/android-times-square" target="_blank">https://github.com/square/android-times-square</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-09-01T08:47:18.000Z"><a href="/2013/09/01/android-rest-client-retrofit/">2013-09-01</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/09/01/android-rest-client-retrofit/">Retrofit(REST client for Android)</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><a href="https://github.com/square/retrofit" target="_blank">Retrofit</a>是一个类型安全的REST工具库;<br>它利用标注去定义HTTP请求参数，返回数据支持JSON, protocol buffers格式，<br>并利用GSON等相应的转换库直接把返回数据转换成bean。 </p>
+<h3>使用介绍</h3>
+<p>定义接口方法，HTTP参数直接在代码中体现</p>
+<figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">GitHubService</span> {</span>
+  <span class="annotation">@GET</span>(<span class="string">"/users/{user}/repos"</span>)
+  List&lt;Repo&gt; listRepos(<span class="annotation">@Path</span>(<span class="string">"user"</span>) String user);
+}
+</pre></td></tr></table></figure>
+
+<p>使用RestAdapter生成GitHubService的实现</p>
+<figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre>RestAdapter restAdapter = <span class="keyword">new</span> RestAdapter.Builder()
+    .setServer(<span class="string">"https://api.github.com"</span>)
+    .build();
+GitHubService service = restAdapter.create(GitHubService.class);
+</pre></td></tr></table></figure>
+
+<p>调用方法，实现HTTP请求</p>
+<figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>List&lt;Repo&gt; repos = service.listRepos(<span class="string">"octocat"</span>);
+</pre></td></tr></table></figure>
+
+<p>Github:<a href="https://github.com/square/retrofit" target="_blank">https://github.com/square/retrofit</a><br>官方介绍：<a href="http://square.github.io/retrofit/" target="_blank">http://square.github.io/retrofit/</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2013-09-01T08:01:44.000Z"><a href="/2013/09/01/android-picasso/">2013-09-01</a></time>
       
       
@@ -188,7 +372,7 @@
   <h3 class="title">分类</h3>
   <ul class="entry">
   
-    <li><a href="/categories/android/">android</a><small>1</small></li>
+    <li><a href="/categories/android/">android</a><small>4</small></li>
   
     <li><a href="/categories/其他/">其他</a><small>1</small></li>
   
@@ -200,7 +384,7 @@
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/imageview/" style="font-size: 12.00px;">imageview</a><a href="/tags/ios/" style="font-size: 14.00px;">ios</a><a href="/tags/mac/" style="font-size: 16.00px;">mac</a><a href="/tags/黑苹果/" style="font-size: 18.00px;">黑苹果</a>
+    <a href="/tags/PullToRefresh/" style="font-size: 10.00px;">PullToRefresh</a><a href="/tags/android/" style="font-size: 11.25px;">android</a><a href="/tags/calendar/" style="font-size: 12.50px;">calendar</a><a href="/tags/imageview/" style="font-size: 13.75px;">imageview</a><a href="/tags/ios/" style="font-size: 15.00px;">ios</a><a href="/tags/mac/" style="font-size: 16.25px;">mac</a><a href="/tags/rest/" style="font-size: 17.50px;">rest</a><a href="/tags/黑苹果/" style="font-size: 18.75px;">黑苹果</a>
   </div>
 </div>
 
