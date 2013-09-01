@@ -54,49 +54,51 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2013-09-01T04:54:24.000Z"><a href="/2013/09/01/my-new-post/">2013-09-01</a></time>
+        <time datetime="2012-02-09T14:01:44.000Z"><a href="/2012/02/09/black-mac-install/">2012-02-09</a></time>
       
       
   
-    <h1 class="title"><a href="/2013/09/01/my-new-post/">my new post</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>hello world!<br>你好啊！</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2013-09-01T04:29:49.000Z"><a href="/2013/09/01/hello-world/">2013-09-01</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2013/09/01/hello-world/">Hello World</a></h1>
+    <h1 class="title"><a href="/2012/02/09/black-mac-install/">黑苹果安装折腾记</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>Welcome to <a href="http://zespia.tw/hexo" target="_blank">Hexo</a>! This is your very first post. Check <a href="http://zespia.tw/hexo/docs" target="_blank">documentation</a> to learn how to use.</p>
+        <p>准备学习一下IOS开发，必须使用MAC系统，于是果断决定安装黑苹果。</p>
+<p>我的笔记本上联想的B460，之前看到有人安装黑苹果成功过，这一款本本算是比较容易安装成功的。</p>
+<p>我的笔记本配置参数：</p>
+<ul>
+<li>屏幕尺寸：14英寸 1366x768</li>
+<li>CPU型号：Intel 酷睿i3 370M</li>
+<li>CPU主频：2.4GHz</li>
+<li>内存容量：2GB DDR3 1066MHz</li>
+<li>硬盘容量：320GB 5400转，SATA</li>
+<li>显卡芯片：NVIDIA Geforce 310M<br>我采用的懒人版的MAC 10.7系统，安装时只有一个PCI配置问题，算是相当顺利了。</li>
+</ul>
+<p>MAC系统下载地址：</p>
+<p><div></p>
+<div id="code_o3k">
+
+<ol>
+<li><a href="http://www.ctdisk.com/file/1357845" target="_blank"><a href="http://u.115.com/file/clo1vkwd">http://u.115.com/file/clo1vkwd</a></a></li>
+<li><a href="http://u.115.com/file/aqax6p1n" target="_blank"><a href="http://u.115.com/file/aqax6p1n">http://u.115.com/file/aqax6p1n</a></a></li>
+<li><a href="http://u.115.com/file/cloyqps2" target="_blank"><a href="http://u.115.com/file/cloyqps2">http://u.115.com/file/cloyqps2</a></a></li>
+<li><a href="http://u.115.com/file/aqaoyxsp" target="_blank"><a href="http://u.115.com/file/aqaoyxsp">http://u.115.com/file/aqaoyxsp</a></a><br></div><br></div><br>安装时至少准备30G的空间，我第一次只分配了20G的，结果安装完xcode后系统只有几百兆空间了，没办法又重装了一次。</li>
+</ol>
+<p>安装参考教程：<a href="http://bbs.pcbeta.com/viewthread-897025-1-1.html" target="_blank"><a href="http://bbs.pcbeta.com/viewthread-897025-1-1.html">http://bbs.pcbeta.com/viewthread-897025-1-1.html</a></a></p>
+<p>系统引导我是通过安装Windows版的“<a href="http://bbs.pcbeta.com/viewthread-967947-1-1.html" target="_blank">变色龙</a>”引导的，没有按照教程里来。使用变色龙，需要加入一些附加的驱动，首先安装<a href="http://www.onlinedown.net/soft/31914.htm" target="_blank">MacDrive 8</a>，使Windows能够访问MAC系统的分区，然后拷贝<a href="http://www.ctdisk.com/file/1368177" target="_blank">extra</a>目录到硬盘安装盘的根目录，最后重启进入变色龙，选择MAC安装盘，加入-f -v参数（选择盘后直接用键盘输入）启动安装。</p>
+<p>安装完成后，也需要到Windows中把<a href="http://www.ctdisk.com/file/1368177" target="_blank">extra</a>目录复制到MAC系统的根目录下。</p>
+<p>总结一下安装时遇到的问题：</p>
+<p>1.启动安装盘时，停止于‘PCI Configuration Begin’。</p>
+<p>解决方法：在启动参数里加入 npci=0x2000</p>
+<p>2.系统安装完，重启后找不到文件，无法启动。</p>
+<p>原因：因为安装MAC系统的分区被设置活动分区，而C盘如果没有设置为活动分区，BIOS就会用找到的活动分区（mac系统所在的分区）开始引导。</p>
+<p>解决办法：用Windows的安装盘运行Windows PE,再打开磁盘管理软件，将C盘设置为活动分区；或者进入DOS，用fdisk设置为活动分区。</p>
+<p>3.直接启动安装好的MAC系统还是会停止在‘PCI Configuration Begin’</p>
+<p>解决办法：在Windows中打开MAC系统所在的盘，定位到\Library\Preferences\SystemConfiguration，编辑com.apple.Boot.plist文件，在&lt;string&gt;&lt;/string&gt;当中加入“npci=0x2000 GraphicsEnabler=yes”，重新启动；加入GraphicsEnabler参数后，如果显卡驱动还没有加载成功，再安装一下<a href="http://www.ctdisk.com/file/1357845" target="_blank">Enabler_for_Nvidia_and_multiple_ATI_cards.pkg</a>。</p>
+<p>4.无法播放声音，声卡驱动有问题，目前还没有解决办法，不准备弄了。</p>
+<p>PS1：安装好的mac系统用ghost也能备份/恢复；但是有一个问题，我因为分区太小，备份了系统，然后扩展分区大小到30G，再恢复，结果系统还只能认到20G。</p>
+<p>PS2：使用windows 7的磁盘管理工具压缩空间，然后创建了新的分区，在操作完成后，不知道什么原因，最后一个分区没了;如果出现这种情况，千万不要格式化，可以通过DiskGenius软件（版本3.5以上）的“找回丢失的分区”功能把分区找回来。</p>
 
       
     </div>
@@ -127,12 +129,21 @@
 </div>
 
   
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/其他/">其他</a><small>1</small></li>
+  
+  </ul>
+</div>
+
 
   
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/ceshi/" style="font-size: 10.00px;">ceshi</a><a href="/tags/hello/" style="font-size: 13.33px;">hello</a><a href="/tags/test/" style="font-size: 16.67px;">test</a>
+    <a href="/tags/ios/" style="font-size: 10.00px;">ios</a><a href="/tags/mac/" style="font-size: 13.33px;">mac</a><a href="/tags/黑苹果/" style="font-size: 16.67px;">黑苹果</a>
   </div>
 </div>
 
