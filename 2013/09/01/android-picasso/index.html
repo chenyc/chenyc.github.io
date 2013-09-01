@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>关于 | 探索Github</title>
+  <title>Android的图片加载库Picasso | 探索Github</title>
   <meta name="author" content="chenyc">
   
   <meta name="description" content="收集Github上优秀项目">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="关于"/>
+  <meta property="og:title" content="Android的图片加载库Picasso"/>
   <meta property="og:site_name" content="探索Github"/>
 
   
@@ -45,27 +45,65 @@
 </nav>
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper"><article class="page">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
   <div class="post-content">
     <header>
       
+        <div class="icon"></div>
+        <time datetime="2013-09-01T08:01:44.000Z"><a href="/2013/09/01/android-picasso/">2013-09-01</a></time>
+      
       
   
-    <h1 class="title">关于</h1>
+    <h1 class="title">Android的图片加载库Picasso</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>探索Github,收集Github优秀的开源项目<br>主要关注Android，IOS，Nodejs相关项目</p>
+        <p><a href="https://github.com/square/picasso" target="_blank">Picasso</a>是square开源的一个Android的图片加载和缓存工具库。<br>可以处理Android开发中图片加载相关的问题：</p>
+<ul>
+<li>自动处理<code>ImageView</code>在Adapter中回收</li>
+<li>使用最小内存处理图片转换操作，比如大小调整等</li>
+<li>自动内存管理和磁盘缓存</li>
+</ul>
+<p><img src="https://github.com/square/picasso/raw/master/website/static/sample.png" alt=""></p>
+<p>图片加载代码</p>
+<figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>Picasso.with(context).load(<span class="string">"http://i.imgur.com/DvpvklR.png"</span>).into(imageView);
+</pre></td></tr></table></figure>
+
+<p>图片转换</p>
+<figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre>Picasso.with(context)
+  .load(url)
+  .resize(<span class="number">50</span>, <span class="number">50</span>)
+  .centerCrop()
+  .into(imageView)
+</pre></td></tr></table></figure>
+
+<p>Github: <a href="https://github.com/square/picasso" target="_blank">https://github.com/square/picasso</a><br>官方介绍：<a href="http://square.github.io/picasso/" target="_blank">http://square.github.io/picasso/</a></p>
 
       
     </div>
     <footer>
       
         
+  
+  <div class="categories">
+    <a href="/categories/android/">android</a>
+  </div>
+
         
+  
+  <div class="tags">
+    <a href="/tags/android/">android</a>, <a href="/tags/imageview/">imageview</a>
+  </div>
+
        
        <!-- Baidu Button BEGIN -->
 <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
@@ -91,6 +129,23 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
   </div>
 </article>
 
+
+<section id="comment">
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"chenyc"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+</section>
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
