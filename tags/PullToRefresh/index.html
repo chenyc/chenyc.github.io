@@ -49,88 +49,21 @@
 <h2 class="archive-title tag">PullToRefresh</h2>
 
 
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2013-09-01T09:11:11.000Z"><a href="/2013/09/01/actionbar-pulltorefresh/">2013-09-01</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2013/09/01/actionbar-pulltorefresh/">Actionbar下拉刷新</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><a href="https://github.com/chrisbanes/ActionBar-PullToRefresh" target="_blank">ActionBar-PullToRefresh</a>是类似于易信的下拉刷新方式，在标题栏显示状态。</p>
-<p>目前支持以下几种控件的下拉刷新：  </p>
-<ul>
-<li>AbsListView derivatives (ListView &amp; GridView).</li>
-<li>ScrollView</li>
-<li>WebView</li>
-</ul>
-<p>ActionBar-PullToRefresh也支持自定义控件的下拉刷新，需要实现<code>ViewDelegate</code></p>
-<h3>使用方法</h3>
-<figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-</pre></td><td class="code"><pre><span class="keyword">private</span> PullToRefreshAttacher mPullToRefreshAttacher;
-
-<span class="annotation">@Override</span>
-<span class="keyword">public</span> <span class="keyword">void</span> onCreate(Bundle savedInstanceState) {
-    <span class="keyword">super</span>.onCreate(savedInstanceState);
-
-    <span class="comment">// Get View for which the user will scroll…</span>
-    View scrollableView = findViewById(R.id.blah); 
-
-    <span class="comment">// Create a PullToRefreshAttacher instance</span>
-    mPullToRefreshAttacher = PullToRefreshAttacher.get(<span class="keyword">this</span>);
-
-    <span class="comment">// Add the Refreshable View and provide the refresh listener</span>
-    mPullToRefreshAttacher.addRefreshableView(scrollableView, <span class="keyword">this</span>);
-}
-</pre></td></tr></table></figure>
-
-<p>更多使用方法请直接参考官方github上的说明。</p>
-<p><img src="https://lh5.ggpht.com/dTB-uAam9M_69P4XKcXK3-dKG_qP28-FcWBz8fSTTBNqUlNhaSBHQWVtXG0dV9fkpxET=h900-rw" alt=""></p>
-<p>Github:<a href="https://github.com/chrisbanes/ActionBar-PullToRefresh" target="_blank">https://github.com/chrisbanes/ActionBar-PullToRefresh</a></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
+  <div class="archive">
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2013-09-01T09:11:11.000Z"><a href="/2013/09/01/actionbar-pulltorefresh/">2013-09-01</a></time>
+            
+              <h1 class="title"><a href="/2013/09/01/actionbar-pulltorefresh/">Actionbar下拉刷新</a></h1>
+            
+          </header>
+        </div>
+      </article>
+    
   </div>
-</article>
-
-
-  
-
-  <nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav>
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">

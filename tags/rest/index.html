@@ -49,74 +49,21 @@
 <h2 class="archive-title tag">rest</h2>
 
 
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2013-09-01T08:47:18.000Z"><a href="/2013/09/01/android-rest-client-retrofit/">2013-09-01</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2013/09/01/android-rest-client-retrofit/">Retrofit(REST client for Android)</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><a href="https://github.com/square/retrofit" target="_blank">Retrofit</a>是一个类型安全的REST工具库;<br>它利用标注去定义HTTP请求参数，返回数据支持JSON, protocol buffers格式，<br>并利用GSON等相应的转换库直接把返回数据转换成bean。 </p>
-<h3>使用介绍</h3>
-<p>定义接口方法，HTTP参数直接在代码中体现</p>
-<figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-</pre></td><td class="code"><pre><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">GitHubService</span> {</span>
-  <span class="annotation">@GET</span>(<span class="string">"/users/{user}/repos"</span>)
-  List&lt;Repo&gt; listRepos(<span class="annotation">@Path</span>(<span class="string">"user"</span>) String user);
-}
-</pre></td></tr></table></figure>
-
-<p>使用RestAdapter生成GitHubService的实现</p>
-<figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-</pre></td><td class="code"><pre>RestAdapter restAdapter = <span class="keyword">new</span> RestAdapter.Builder()
-    .setServer(<span class="string">"https://api.github.com"</span>)
-    .build();
-GitHubService service = restAdapter.create(GitHubService.class);
-</pre></td></tr></table></figure>
-
-<p>调用方法，实现HTTP请求</p>
-<figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>List&lt;Repo&gt; repos = service.listRepos(<span class="string">"octocat"</span>);
-</pre></td></tr></table></figure>
-
-<p>Github:<a href="https://github.com/square/retrofit" target="_blank">https://github.com/square/retrofit</a><br>官方介绍：<a href="http://square.github.io/retrofit/" target="_blank">http://square.github.io/retrofit/</a></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
+  <div class="archive">
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2013-09-01T08:47:18.000Z"><a href="/2013/09/01/android-rest-client-retrofit/">2013-09-01</a></time>
+            
+              <h1 class="title"><a href="/2013/09/01/android-rest-client-retrofit/">Retrofit(REST client for Android)</a></h1>
+            
+          </header>
+        </div>
+      </article>
+    
   </div>
-</article>
-
-
-  
-
-  <nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav>
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">

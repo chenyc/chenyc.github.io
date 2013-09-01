@@ -49,320 +49,69 @@
 <h2 class="archive-title">归档</h2>
 
 
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2013-09-01T09:11:11.000Z"><a href="/2013/09/01/actionbar-pulltorefresh/">2013-09-01</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2013/09/01/actionbar-pulltorefresh/">Actionbar下拉刷新</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><a href="https://github.com/chrisbanes/ActionBar-PullToRefresh" target="_blank">ActionBar-PullToRefresh</a>是类似于易信的下拉刷新方式，在标题栏显示状态。</p>
-<p>目前支持以下几种控件的下拉刷新：  </p>
-<ul>
-<li>AbsListView derivatives (ListView &amp; GridView).</li>
-<li>ScrollView</li>
-<li>WebView</li>
-</ul>
-<p>ActionBar-PullToRefresh也支持自定义控件的下拉刷新，需要实现<code>ViewDelegate</code></p>
-<h3>使用方法</h3>
-<figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-</pre></td><td class="code"><pre><span class="keyword">private</span> PullToRefreshAttacher mPullToRefreshAttacher;
-
-<span class="annotation">@Override</span>
-<span class="keyword">public</span> <span class="keyword">void</span> onCreate(Bundle savedInstanceState) {
-    <span class="keyword">super</span>.onCreate(savedInstanceState);
-
-    <span class="comment">// Get View for which the user will scroll…</span>
-    View scrollableView = findViewById(R.id.blah); 
-
-    <span class="comment">// Create a PullToRefreshAttacher instance</span>
-    mPullToRefreshAttacher = PullToRefreshAttacher.get(<span class="keyword">this</span>);
-
-    <span class="comment">// Add the Refreshable View and provide the refresh listener</span>
-    mPullToRefreshAttacher.addRefreshableView(scrollableView, <span class="keyword">this</span>);
-}
-</pre></td></tr></table></figure>
-
-<p>更多使用方法请直接参考官方github上的说明。</p>
-<p><img src="https://lh5.ggpht.com/dTB-uAam9M_69P4XKcXK3-dKG_qP28-FcWBz8fSTTBNqUlNhaSBHQWVtXG0dV9fkpxET=h900-rw" alt=""></p>
-<p>Github:<a href="https://github.com/chrisbanes/ActionBar-PullToRefresh" target="_blank">https://github.com/chrisbanes/ActionBar-PullToRefresh</a></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
+  <div class="archive">
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2013-09-01T09:11:11.000Z"><a href="/2013/09/01/actionbar-pulltorefresh/">2013-09-01</a></time>
+            
+              <h1 class="title"><a href="/2013/09/01/actionbar-pulltorefresh/">Actionbar下拉刷新</a></h1>
+            
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2013-09-01T09:02:55.000Z"><a href="/2013/09/01/android-times-square/">2013-09-01</a></time>
+            
+              <h1 class="title"><a href="/2013/09/01/android-times-square/">android日历控件</a></h1>
+            
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2013-09-01T08:47:18.000Z"><a href="/2013/09/01/android-rest-client-retrofit/">2013-09-01</a></time>
+            
+              <h1 class="title"><a href="/2013/09/01/android-rest-client-retrofit/">Retrofit(REST client for Android)</a></h1>
+            
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2013-09-01T08:01:44.000Z"><a href="/2013/09/01/android-picasso/">2013-09-01</a></time>
+            
+              <h1 class="title"><a href="/2013/09/01/android-picasso/">Android的图片加载库Picasso</a></h1>
+            
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2012-02-09T14:01:44.000Z"><a href="/2012/02/09/black-mac-install/">2012-02-09</a></time>
+            
+              <h1 class="title"><a href="/2012/02/09/black-mac-install/">黑苹果安装折腾记</a></h1>
+            
+          </header>
+        </div>
+      </article>
+    
   </div>
-</article>
-
-
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2013-09-01T09:02:55.000Z"><a href="/2013/09/01/android-times-square/">2013-09-01</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2013/09/01/android-times-square/">android日历控件</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><a href="https://github.com/square/android-times-square" target="_blank">TimesSquare</a>是Square开源的一个日历控件。</p>
-<h3>使用方法：</h3>
-<p>在layout中加入如下代码</p>
-<figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-</pre></td><td class="code"><pre>&lt;com.squareup.timessquare.CalendarPickerView
-    android:id=<span class="string">"@+id/calendar_view"</span>
-    android:layout_width=<span class="string">"match_parent"</span>
-    android:layout_height=<span class="string">"match_parent"</span>
-    /&gt;
-</pre></td></tr></table></figure>
-
-<p><img src="https://github.com/square/android-times-square/raw/master/timesSquareScreenshot.png" alt=""></p>
-<p>Github：<a href="https://github.com/square/android-times-square" target="_blank">https://github.com/square/android-times-square</a></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2013-09-01T08:47:18.000Z"><a href="/2013/09/01/android-rest-client-retrofit/">2013-09-01</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2013/09/01/android-rest-client-retrofit/">Retrofit(REST client for Android)</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><a href="https://github.com/square/retrofit" target="_blank">Retrofit</a>是一个类型安全的REST工具库;<br>它利用标注去定义HTTP请求参数，返回数据支持JSON, protocol buffers格式，<br>并利用GSON等相应的转换库直接把返回数据转换成bean。 </p>
-<h3>使用介绍</h3>
-<p>定义接口方法，HTTP参数直接在代码中体现</p>
-<figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-</pre></td><td class="code"><pre><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">GitHubService</span> {</span>
-  <span class="annotation">@GET</span>(<span class="string">"/users/{user}/repos"</span>)
-  List&lt;Repo&gt; listRepos(<span class="annotation">@Path</span>(<span class="string">"user"</span>) String user);
-}
-</pre></td></tr></table></figure>
-
-<p>使用RestAdapter生成GitHubService的实现</p>
-<figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-</pre></td><td class="code"><pre>RestAdapter restAdapter = <span class="keyword">new</span> RestAdapter.Builder()
-    .setServer(<span class="string">"https://api.github.com"</span>)
-    .build();
-GitHubService service = restAdapter.create(GitHubService.class);
-</pre></td></tr></table></figure>
-
-<p>调用方法，实现HTTP请求</p>
-<figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>List&lt;Repo&gt; repos = service.listRepos(<span class="string">"octocat"</span>);
-</pre></td></tr></table></figure>
-
-<p>Github:<a href="https://github.com/square/retrofit" target="_blank">https://github.com/square/retrofit</a><br>官方介绍：<a href="http://square.github.io/retrofit/" target="_blank">http://square.github.io/retrofit/</a></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2013-09-01T08:01:44.000Z"><a href="/2013/09/01/android-picasso/">2013-09-01</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2013/09/01/android-picasso/">Android的图片加载库Picasso</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><a href="https://github.com/square/picasso" target="_blank">Picasso</a>是square开源的一个Android的图片加载和缓存工具库。<br>可以处理Android开发中图片加载相关的问题：</p>
-<ul>
-<li>自动处理<code>ImageView</code>在Adapter中回收</li>
-<li>使用最小内存处理图片转换操作，比如大小调整等</li>
-<li>自动内存管理和磁盘缓存</li>
-</ul>
-<p><img src="https://github.com/square/picasso/raw/master/website/static/sample.png" alt=""></p>
-<p>图片加载代码</p>
-<figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>Picasso.with(context).load(<span class="string">"http://i.imgur.com/DvpvklR.png"</span>).into(imageView);
-</pre></td></tr></table></figure>
-
-<p>图片转换</p>
-<figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-</pre></td><td class="code"><pre>Picasso.with(context)
-  .load(url)
-  .resize(<span class="number">50</span>, <span class="number">50</span>)
-  .centerCrop()
-  .into(imageView)
-</pre></td></tr></table></figure>
-
-<p>Github: <a href="https://github.com/square/picasso" target="_blank">https://github.com/square/picasso</a><br>官方介绍：<a href="http://square.github.io/picasso/" target="_blank">http://square.github.io/picasso/</a></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2012-02-09T14:01:44.000Z"><a href="/2012/02/09/black-mac-install/">2012-02-09</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2012/02/09/black-mac-install/">黑苹果安装折腾记</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>准备学习一下IOS开发，必须使用MAC系统，于是果断决定安装黑苹果。</p>
-<p>我的笔记本上联想的B460，之前看到有人安装黑苹果成功过，这一款本本算是比较容易安装成功的。</p>
-<p>我的笔记本配置参数：</p>
-<ul>
-<li>屏幕尺寸：14英寸 1366x768</li>
-<li>CPU型号：Intel 酷睿i3 370M</li>
-<li>CPU主频：2.4GHz</li>
-<li>内存容量：2GB DDR3 1066MHz</li>
-<li>硬盘容量：320GB 5400转，SATA</li>
-<li>显卡芯片：NVIDIA Geforce 310M<br>我采用的懒人版的MAC 10.7系统，安装时只有一个PCI配置问题，算是相当顺利了。</li>
-</ul>
-<p>MAC系统下载地址：</p>
-<p><div></p>
-<div id="code_o3k">
-
-<ol>
-<li><a href="http://www.ctdisk.com/file/1357845" target="_blank"><a href="http://u.115.com/file/clo1vkwd">http://u.115.com/file/clo1vkwd</a></a></li>
-<li><a href="http://u.115.com/file/aqax6p1n" target="_blank"><a href="http://u.115.com/file/aqax6p1n">http://u.115.com/file/aqax6p1n</a></a></li>
-<li><a href="http://u.115.com/file/cloyqps2" target="_blank"><a href="http://u.115.com/file/cloyqps2">http://u.115.com/file/cloyqps2</a></a></li>
-<li><a href="http://u.115.com/file/aqaoyxsp" target="_blank"><a href="http://u.115.com/file/aqaoyxsp">http://u.115.com/file/aqaoyxsp</a></a><br></div><br></div><br>安装时至少准备30G的空间，我第一次只分配了20G的，结果安装完xcode后系统只有几百兆空间了，没办法又重装了一次。</li>
-</ol>
-<p>安装参考教程：<a href="http://bbs.pcbeta.com/viewthread-897025-1-1.html" target="_blank"><a href="http://bbs.pcbeta.com/viewthread-897025-1-1.html">http://bbs.pcbeta.com/viewthread-897025-1-1.html</a></a></p>
-<p>系统引导我是通过安装Windows版的“<a href="http://bbs.pcbeta.com/viewthread-967947-1-1.html" target="_blank">变色龙</a>”引导的，没有按照教程里来。使用变色龙，需要加入一些附加的驱动，首先安装<a href="http://www.onlinedown.net/soft/31914.htm" target="_blank">MacDrive 8</a>，使Windows能够访问MAC系统的分区，然后拷贝<a href="http://www.ctdisk.com/file/1368177" target="_blank">extra</a>目录到硬盘安装盘的根目录，最后重启进入变色龙，选择MAC安装盘，加入-f -v参数（选择盘后直接用键盘输入）启动安装。</p>
-<p>安装完成后，也需要到Windows中把<a href="http://www.ctdisk.com/file/1368177" target="_blank">extra</a>目录复制到MAC系统的根目录下。</p>
-<p>总结一下安装时遇到的问题：</p>
-<p>1.启动安装盘时，停止于‘PCI Configuration Begin’。</p>
-<p>解决方法：在启动参数里加入 npci=0x2000</p>
-<p>2.系统安装完，重启后找不到文件，无法启动。</p>
-<p>原因：因为安装MAC系统的分区被设置活动分区，而C盘如果没有设置为活动分区，BIOS就会用找到的活动分区（mac系统所在的分区）开始引导。</p>
-<p>解决办法：用Windows的安装盘运行Windows PE,再打开磁盘管理软件，将C盘设置为活动分区；或者进入DOS，用fdisk设置为活动分区。</p>
-<p>3.直接启动安装好的MAC系统还是会停止在‘PCI Configuration Begin’</p>
-<p>解决办法：在Windows中打开MAC系统所在的盘，定位到\Library\Preferences\SystemConfiguration，编辑com.apple.Boot.plist文件，在&lt;string&gt;&lt;/string&gt;当中加入“npci=0x2000 GraphicsEnabler=yes”，重新启动；加入GraphicsEnabler参数后，如果显卡驱动还没有加载成功，再安装一下<a href="http://www.ctdisk.com/file/1357845" target="_blank">Enabler_for_Nvidia_and_multiple_ATI_cards.pkg</a>。</p>
-<p>4.无法播放声音，声卡驱动有问题，目前还没有解决办法，不准备弄了。</p>
-<p>PS1：安装好的mac系统用ghost也能备份/恢复；但是有一个问题，我因为分区太小，备份了系统，然后扩展分区大小到30G，再恢复，结果系统还只能认到20G。</p>
-<p>PS2：使用windows 7的磁盘管理工具压缩空间，然后创建了新的分区，在操作完成后，不知道什么原因，最后一个分区没了;如果出现这种情况，千万不要格式化，可以通过DiskGenius软件（版本3.5以上）的“找回丢失的分区”功能把分区找回来。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-  
-
-  <nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav>
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
